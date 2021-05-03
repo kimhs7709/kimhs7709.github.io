@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <script src="https://kit.fontawesome.com/8eb5905426.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+	var gbBottomMenuVisible = true;
+
+	function body_scroll() {
+	  if( document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+	    if( gbBottomMenuVisible ) {
+		  $('.bottom_menu').animate( { bottom:-50 }, 'slow' );
+		  gbBottomMenuVisible = false;
+		}
+	  } else if( gbBottomMenuVisible == false ) {
+		$('.bottom_menu').animate( { bottom:0 }, 'slow' );
+		gbBottomMenuVisible = true;
+	  }
+	}
+  </script>
+  <style>
+    body {
+      padding-top: 100px;
+    }
+
+    .menu-button {
+      border: 0;
+      outline: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  
+      height: 75px;
+      padding: 1rem;
+      color: black;
+      background: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bottom_menu { 
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 50px;
+      z-index:100;
+      border-top: 1px solid black;
+      background-color: white;
+    }
+
+	.bottom_menu > div { 
+      float: left;
+      width: 25%;
+      height: 100%;
+      text-align: center;
+      padding-top: 13px;
+    }
+  </style>
+</head>
+
+<body onscroll = "body_scroll()">
+  <header>
+    <h1>Page Name</h1>
+    <nav>
+      <button type = "button" onclick = "location.href = 'write.html'">글쓰기</button>
+      <button type = "button">Logout</button>
+    </nav>
+  </header>
+
+  <div class="bottom_menu">
+	<div>
+      <button class = "menu-button" type = "button" onclick = "location.href = 'index.html'">
+        <i class="fa fa-home fa-3x"></i>
+      </button>
+	</div>
+
+	<div>
+      <button class = "menu-button" type = "button" onclick = "location.href = 'search.html'">
+        <i class="fas fa-search fa-3x"></i>
+      </button>
+	</div>
+
+	<div>
+      <button class = "menu-button" type = "button" onclick = "location.href = 'profile.html'">
+        <i class="fa fa-user fa-3x"></i>
+      </button>
+	</div>
+
+	<div style="background-color: gray">
+      <button class = "menu-button" type = "button" onclick = "location.href = 'settings.html'">
+        <i class="fa fa-cog fa-3x"></i>
+      </button>
+	</div>
+  </div>
+</doby>
