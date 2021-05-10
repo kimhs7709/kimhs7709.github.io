@@ -63,11 +63,11 @@
         background: none;
     }
 
-    .btn {
+    .btn1 {
         position:relative;
         left:40%;
         transform: translateX(-50%);
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         width:80%;
         height:40px;
         background: #475d9f;
@@ -81,12 +81,22 @@
         display:inline;
     }
 
-    .btn:hover {
-        background-position: right;
-    }
-
-    .bottomText {
-        text-align: center;
+    .btn2 {
+        position:relative;
+        left:40%;
+        transform: translateX(-50%);
+        margin-bottom: 40px;
+        width:80%;
+        height:40px;
+        background: #ffffff;
+        background-position: left;
+        background-size: 200%;
+        color:black;
+        font-weight: bold;
+        border:solid;
+        cursor:pointer;
+        transition: 0.4s;
+        display:inline;
     }
     </style>
   </head>
@@ -101,10 +111,8 @@
       <div class="passForm">
         <input type="password" class="pw" placeholder="PW">
       </div>
-      <button type="button" class="btn" onclick = "location.href = 'index.html'"> LOG IN </button>
-      <div class="bottomText">
-        Don't you have ID? <a href="signup.html">Sign up</a>
-      </div>
+      <button type="button" class="btn1" onclick = "location.href = 'index.html'"> LOG IN </button>
+      <button type="button" class="btn2" onclick = "location.href = 'signup.html'"> SIGN UP </button>
     </form>
   </body>
 </html>
